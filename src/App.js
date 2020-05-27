@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './Components/Navbar'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import {connect} from 'react-redux'
 
-function App() {
+function App({BASE_URL}) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename={BASE_URL}>
+        <div className="App">
+            <Navbar />
+            <Switch>
+                <Route path="/Projects">
+                    Wooha My Project HERE
+                </Route>
+                <Route path="/">
+                    
+                </Route>
+            </Switch>
+        </div>
+    </Router>
   );
 }
 
-export default App;
+
+const mapStateToProps = (state /*, ownProps*/) => {
+    return {
+        BASE_URL : state.BASE_URL,
+    }
+}
+  
+
+
+// const mapDispatchToProps = { increment, decrement, reset }
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions : {
+
+        }
+    }
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(App);
