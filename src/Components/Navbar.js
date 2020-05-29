@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './../Style/Navbar.scss'
 import {connect} from 'react-redux'
 import logo from './../Images/logo.jpg'
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 const Navbar = ({NAVBAR_URLS}) => {
     const [showNavbar, setShowNavbar] = useState(false);
@@ -23,9 +25,9 @@ const Navbar = ({NAVBAR_URLS}) => {
                         NAVBAR_URLS.map((item) => {
                             return(
                                 <li key={item.url} className="menu-item" data-tip={item.title}>
-                                    <a href={item.url}>
+                                    <Link to={item.url} smooth>
                                         <img src={item.icon} />
-                                    </a>
+                                    </Link>
                                 </li>
                             )
                         })

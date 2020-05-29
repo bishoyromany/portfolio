@@ -12,4 +12,52 @@ body{
     padding: 0px;
     margin: 0px;
     background-color : #444;
+    overflow-x: hidden;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.pretty-header-container{
+    text-align: center;
+    .pretty-header{
+        text-align: center;
+        font-size: 30pt;
+        margin-top: 5%;
+        display: inline-block;
+        position: relative;
+        &:after{
+            content: '';
+            bottom : -10px;
+            width : 60%;
+            left : 20%;
+            height : 5px;
+            background-color : #FFF;
+            position: absolute;
+        }
+    }
 }
