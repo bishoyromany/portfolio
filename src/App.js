@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Components/Navbar'
+import Home from './Pages/Home'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,7 +19,7 @@ function App({BASE_URL}) {
                     Wooha My Project HERE
                 </Route>
                 <Route path="/">
-                    
+                    <Home />
                 </Route>
             </Switch>
             <ReactTooltip />

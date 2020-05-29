@@ -12,7 +12,7 @@ let data = {
     NAVBAR_URLS: [
         {
             title : 'Home',
-            url: '/#Home',
+            url: '/#HomeIntro',
             class: 'home-url',
             icon : homepage,
         },

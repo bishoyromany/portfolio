@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './../Style/Navbar.scss'
 import {connect} from 'react-redux'
-import store from '../Store/store';
+import logo from './../Images/logo.jpg'
 
 const Navbar = ({NAVBAR_URLS}) => {
     const [showNavbar, setShowNavbar] = useState(false);
@@ -11,8 +11,11 @@ const Navbar = ({NAVBAR_URLS}) => {
         setTimeout(setShowNavbar(!showNavbar), 500);
     }
     return(
-        <header id="navbar" className={`${showNavbar ? 'active' : ''}`}>
-            <nav className="menu">
+        <header id="navbar">
+            <div className="logo">
+                <img alt="logo" src={logo} />
+            </div>
+            <nav className={`menu ${showNavbar ? 'active' : ''}`}>
                 <input id="menu-toggler" data-tip="Menu Bar" className="menu-toggler" type="checkbox" checked={showNavbar ? 'checked' : ''} onChange={() => toggle()} />
                 <label htmlFor="menu-toggler" data-tip="Menu Bar"></label>
                 <ul>
@@ -30,7 +33,7 @@ const Navbar = ({NAVBAR_URLS}) => {
 
                 </ul>
             </nav>
-
+            
             {/* <div className="list-icon" onClick={() => setShowNavbar(!showNavbar)}>
                 <span></span>
                 <span></span>
