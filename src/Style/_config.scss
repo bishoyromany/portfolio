@@ -1,0 +1,13 @@
+// helpers for navbar
+$toggler-size: 40px;
+$toggler-color: white;
+$toggler-transition: transform .5s, top .5s;
+
+$item-count: 5;
+$item-size: $toggler-size * 2;
+$item-color: white;
+$item-transition: .5s;
+
+body{
+    background-color : #000;
+}

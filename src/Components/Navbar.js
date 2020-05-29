@@ -5,9 +5,33 @@ import store from '../Store/store';
 
 const Navbar = ({NAVBAR_URLS}) => {
     const [showNavbar, setShowNavbar] = useState(false);
+    const [showNavbarFast, setShowNavbarFast] = useState(showNavbar);
+    const toggle = () => {
+        setShowNavbarFast(!showNavbar);
+        setTimeout(setShowNavbar(!showNavbar), 500);
+    }
     return(
         <header id="navbar" className={`${showNavbar ? 'active' : ''}`}>
-            <div className="list-icon" onClick={() => setShowNavbar(!showNavbar)}>
+            <nav className="menu">
+                <input id="menu-toggler" data-tip="Menu Bar" className="menu-toggler" type="checkbox" checked={showNavbar ? 'checked' : ''} onChange={() => toggle()} />
+                <label htmlFor="menu-toggler" data-tip="Menu Bar"></label>
+                <ul>
+                    {
+                        NAVBAR_URLS.map((item) => {
+                            return(
+                                <li key={item.url} className="menu-item" data-tip={item.title}>
+                                    <a href={item.url}>
+                                        <img src={item.icon} />
+                                    </a>
+                                </li>
+                            )
+                        })
+                    }
+
+                </ul>
+            </nav>
+
+            {/* <div className="list-icon" onClick={() => setShowNavbar(!showNavbar)}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,7 +52,7 @@ const Navbar = ({NAVBAR_URLS}) => {
                         })
                     }
                 </ul>
-            </div>
+            </div> */}
         </header>
     );  
 };

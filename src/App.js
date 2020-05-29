@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import {connect} from 'react-redux'
+import ReactTooltip from 'react-tooltip';
 
 function App({BASE_URL}) {
   return (
@@ -20,6 +21,7 @@ function App({BASE_URL}) {
                     
                 </Route>
             </Switch>
+            <ReactTooltip />
         </div>
     </Router>
   );
