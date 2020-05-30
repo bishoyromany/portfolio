@@ -103,28 +103,28 @@ let data = {
         },
         {
             title : 'Laravel',
-            process: 75,
+            process: 80,
             icon : laravel
         },
         {
             title : 'Wordpress',
-            process: 70,
+            process: 75,
             icon : laravel
         },
         {
             title : 'Python',
-            process: 40,
+            process: 70,
             icon : python
         },
         {
             title : 'MySQL',
-            process: 70,
+            process: 80,
             icon : mysql
         },
 
         {
             title : 'React',
-            process: 60,
+            process: 65,
             icon : react
         },
         {
@@ -148,6 +148,44 @@ let data = {
         //     icon : pug
         // },
     ],
+    MORE_SKILLS : [
+        {
+            title : 'API Integration',
+            process: 80,
+        },
+        {
+            title : 'JSON',
+            process: 100,
+        },
+        {
+            title : 'Ajax',
+            process: 80,
+        },
+        {
+            title : 'Scraping',
+            process: 70,
+        },
+        {
+            title : 'Git',
+            process: 70,
+        },
+        {
+            title : 'Host Website',
+            process: 80,
+        },
+        {
+            title : 'NPM',
+            process: 75,
+        },
+        {
+            title : 'Plugins Dev',
+            process: 60,
+        },
+        {
+            title : 'SPA',
+            process: 90,
+        }
+    ]
 };
 
 const storeData = (state = data, action) => {

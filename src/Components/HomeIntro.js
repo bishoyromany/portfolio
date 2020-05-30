@@ -177,7 +177,7 @@ const HomeIntro = () => {
   
             </div>
              */}
-            <button className="view-skills">
+            <button className="prettyButton">
                 <Link to="#Skills" smooth>View my skills <i className="arrow down"></i></Link>
             </button>
         </div>
