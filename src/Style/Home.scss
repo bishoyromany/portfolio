@@ -297,6 +297,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 1s ease-in-out;
+            margin-top : 1500px;
+            opacity: 0;
+            z-index : -1;
+            &.show-project{
+                margin-top : 0px;
+                opacity: 1;
+                z-index: 111111;
+            }
             .project-overlay{
                 position: fixed;
                 top : 0px;
@@ -310,7 +319,7 @@
 
             .project{
                 background-color : #FFF;
-                height : 700px;
+                height : auto;
                 max-width : 90%;
                 width : 600px;
                 margin : 0px auto;
@@ -368,24 +377,121 @@
 
                 .content{
                     .images-slider{
-                        ul{
+                        .images{
                             list-style: none;
                             width : 100%;
                             padding : 0px;
                             margin: 0px;
                             white-space: nowrap;
+                            overflow: hidden;
                             li{
                                 display: inline-block;
                                 width : 100%;
                                 height : 300px;
                                 overflow: hidden;
+                                transition: all 1s ease-in-out;
                                 img{
                                     display: inline-block;
                                     width : 100%;
                                     transition: margin 5s ease-in-out;
-                                    &:hover{
-                                        // margin-top: -200%;
-                                    }
+                                }
+                            }
+                        }
+                        .movers{
+                            background-color :#EEE;
+                            border-bottom : 1px solid #CCC;
+                            border-top : 1px solid #CCC;
+                            .next{
+                                float : right;
+                                padding : 10px 20px;
+                                border-left : 1px solid #CCC;
+                                background-color :#EEE;
+                                cursor: pointer;
+                                &:hover{
+                                    color : #FFF;
+                                    background-color : #333;
+                                }
+                            }
+                            .previous{
+                                cursor: pointer;
+                                float : right;
+                                padding : 10px 20px;
+                                border-left : 1px solid #CCC;
+                                background-color :#EEE;  
+                                &:hover{
+                                    background-color : #333;
+                                    color : #FFF;
+                                }
+                            }
+                            .images-count{
+                                float : left;
+                                padding : 10px 20px;
+                                border-right : 1px solid #CCC;
+                                background-color :#EEE;
+                            }
+                        }
+                        .text{
+                            padding : 0px 10px;
+                            font-family: "Courier New";
+                            font-size : 1.1em;
+                        }
+                        .tools{
+                            list-style: none;
+                            padding : 0px;
+                            margin : 0px;
+                            background-color : #EEE;
+                            border-top : 1px solid #CCC;
+                            border-bottom : 1px solid #CCC;
+                            margin-top : 30px;
+                            li{
+                                display: inline-block;
+                                color : #333;
+                                border-radius : 5px;
+                                padding : 5px 10px; 
+                                margin : 10px;
+                                background-color : #EEE;
+                                transition: .6s;
+                                overflow: hidden;
+                                position: relative;
+                                &:hover{
+                                    background-color : #333;
+                                    color : #EEE;
+                                }
+                                &:focus{
+                                    outline: 0;
+                                }
+                                &:after{
+                                    content: '';
+                                    position: absolute;
+                                    top: -50%;
+                                    right: -50%;
+                                    bottom: -50%;
+                                    left: -50%;
+                                    background: #FFF;
+                                    filter: blur(1rem);
+                                    transform: rotateZ(60deg) translate(-5em, 7.5em);
+                                }
+                                &:hover::after {
+                                    animation: sheen 1s forwards;
+                                }
+                            }
+                        }
+                        .project-url-conainer{
+                            text-align: center;
+                            .project-url{
+                                display: inline-block;
+                                background: #EEE;
+                                border : 1px solid #CCC;
+                                padding : 10px 20px;
+                                color : #333;
+                                border-radius: 5px;
+                                margin: 20px auto;
+                                text-decoration: none;
+                                transition: all 0.5s ease-in-out;
+                                &:hover{
+                                    background: #333;
+                                    border:1px solid #222;
+                                    color : #EEE;
                                 }
                             }
                         }

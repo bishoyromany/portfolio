@@ -176,7 +176,7 @@ let data = {
                 title : 'Project Title',
                 text : 'Project Description',
                 tools : ['HTML', 'CSS', 'JS'],
-                images : [visual],
+                images : [visual,visual,visual],
                 featured_image : visual,
                 url : 'https://bishoyromany.github.io/visual_studio/',
             }
