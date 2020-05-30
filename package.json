@@ -15,7 +15,8 @@
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.4.1",
     "react-tooltip": "^4.2.6",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "splitting": "^1.0.6"
   },
   "scripts": {
     "start": "react-scripts start",

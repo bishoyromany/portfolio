@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import start from './../Helpers/canvas'
 import setupTypewriter from './../Helpers/typer'
 import { HashLink as Link } from 'react-router-hash-link';
+import Splitting from "./../Helpers/splitting";
 
 const HomeIntro = () => {
     useEffect(() => {
@@ -9,6 +10,10 @@ const HomeIntro = () => {
         let typer = document.getElementById('typewriter');
         let typewriter = setupTypewriter(typer);
         typewriter.type();
+
+        Splitting()({
+            whitespace: true
+        })
     }, []);
 
 
@@ -34,8 +39,9 @@ const HomeIntro = () => {
                 </div>
             </div>
 
+            <h1 data-splitting className="hello-animated">Hello There!</h1>
 
-            <div className="tool-support-animation-container js-tool-support skills-container">
+            {/* <div className="tool-support-animation-container js-tool-support skills-container">
 
                 <div className="deployment-tile-container tile-slide-down js-tool-tile" data-animation-order="first">
                     <div className="deployment-tile deployment-tile--fake">
@@ -170,7 +176,7 @@ const HomeIntro = () => {
                 </div>
   
             </div>
-            
+             */}
             <button className="view-skills">
                 <Link to="#Skills" smooth>View my skills <i className="arrow down"></i></Link>
             </button>

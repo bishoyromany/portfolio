@@ -83,53 +83,70 @@ let data = {
     SKILLS : [
         {
             title : 'HTML',
+            process: 95,
             icon : html
         },
         {
             title : 'CSS',
+            process: 85,
             icon : css
         },
         {
             title : 'Javacript',
+            process: 70,
             icon : js
         },
         {
             title : 'PHP',
+            process: 80,
             icon : php
         },
         {
             title : 'Laravel',
+            process: 75,
+            icon : laravel
+        },
+        {
+            title : 'Wordpress',
+            process: 70,
             icon : laravel
         },
         {
             title : 'Python',
+            process: 40,
             icon : python
         },
         {
             title : 'MySQL',
+            process: 70,
             icon : mysql
         },
 
         {
             title : 'React',
+            process: 60,
             icon : react
         },
         {
             title : 'Vue',
+            process: 75,
             icon : vue
         },
         {
             title : 'Bootstrap',
+            process: 80,
             icon : bootstrap
         },
-        {
-            title : 'SASS',
-            icon : sass
-        },
-        {
-            title : 'Pug',
-            icon : pug
-        },
+        // {
+        //     title : 'SASS',
+        //     process: 60,
+        //     icon : sass
+        // },
+        // {
+        //     title : 'Pug',
+        //     process: 60,
+        //     icon : pug
+        // },
     ],
 };
 
