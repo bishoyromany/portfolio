@@ -9,19 +9,9 @@ import responsive from './../Images/responsive.svg'
 import fast from './../Images/fast.svg'
 import dynamic from './../Images/dynamic.svg'
 import solution from './../Images/solution.svg'
-import html from './../Images/skills/html.png'
-import css from './../Images/skills/css.png'
-import js from './../Images/skills/js.jpg'
-import php from './../Images/skills/php.png'
-import python from './../Images/skills/python.png'
-import laravel from './../Images/skills/laravel.png'
-import mysql from './../Images/skills/mysql.png'
-import bootstrap from './../Images/skills/bootstrap.png'
-import react from './../Images/skills/react.png'
-import vue from './../Images/skills/vue.jpg'
-import sass from './../Images/skills/sass.png'
-import pug from './../Images/skills/pug.png'
 
+// projects part
+import visual from './../Images/projects/visual.png'
 
 let data = {
     APP_NAME : "Portfolio",
@@ -84,58 +74,47 @@ let data = {
         {
             title : 'HTML',
             process: 95,
-            icon : html
         },
         {
             title : 'CSS',
             process: 85,
-            icon : css
         },
         {
             title : 'Javacript',
             process: 70,
-            icon : js
         },
         {
             title : 'PHP',
             process: 80,
-            icon : php
         },
         {
             title : 'Laravel',
             process: 80,
-            icon : laravel
         },
         {
             title : 'Wordpress',
             process: 75,
-            icon : laravel
         },
         {
             title : 'Python',
             process: 70,
-            icon : python
         },
         {
             title : 'MySQL',
             process: 80,
-            icon : mysql
         },
 
         {
             title : 'React',
             process: 65,
-            icon : react
         },
         {
             title : 'Vue',
             process: 75,
-            icon : vue
         },
         {
             title : 'Bootstrap',
             process: 80,
-            icon : bootstrap
         },
         // {
         //     title : 'SASS',
@@ -185,7 +164,25 @@ let data = {
             title : 'SPA',
             process: 90,
         }
-    ]
+    ],
+    PROJECTS : {
+        settings : {
+            perpage : 9,
+            offset : 0,
+        },
+        items : [
+            {
+                id : 1,
+                title : 'Project Title',
+                text : 'Project Description',
+                tools : ['HTML', 'CSS', 'JS'],
+                images : [visual],
+                featured_image : visual,
+                url : 'https://bishoyromany.github.io/visual_studio/',
+            }
+
+        ],
+    }
 };
 
 const storeData = (state = data, action) => {
