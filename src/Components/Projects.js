@@ -12,9 +12,20 @@ const Projects = ({PROJECTS}) => {
         setCurrentImage(0);
     }   
 
-
-    const handleImageScrollBottom = (el, skip) => {
-        el.style['margin-top'] = '-'+(el.height - skip)+'px';
+    const handleImageScrollBottom = (el, skip, infinity) => {
+        if(infinity){
+            setTimeout(() => {
+                el.style['margin-top'] = '-'+(el.height - skip)+'px';
+                setTimeout(() => {
+                    handleImageScrollTop(el);
+                    setTimeout(() => {
+                        handleImageScrollBottom(el, skip, infinity);
+                    },5000)
+                }, 5000)
+            }, Math.floor(Math.random() * 10000));
+        }else{
+            el.style['margin-top'] = '-'+(el.height - skip)+'px';
+        }
     }
 
     const handleImageScrollTop = (el) => {
@@ -101,7 +112,7 @@ const Projects = ({PROJECTS}) => {
                                 <div className="col-md-4" key={item.id}>
                                     <div className="item-container">
                                         <div className="img-container">
-                                            <img src={item.featured_image} />
+                                            <img src={item.featured_image} onLoad={(e) => handleImageScrollBottom(e.target, 200, true)} />
                                         </div>
                                         <h3>{item.title}</h3>
                                         <ul>
