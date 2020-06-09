@@ -174,7 +174,7 @@
     }
 
     #Projects{
-        min-height: 100vh;
+        min-height: 110vh;
         min-width: 100vw;
         background: rgb(68,68,68);
         background: linear-gradient(0deg, rgb(129, 129, 129) 0%, rgb(100, 100, 100) 100%);
@@ -561,6 +561,13 @@
                 }
             }
         }
+    }
+
+    #Resume{
+        min-height: 100vh;
+        min-width: 100vw;
+        background: rgb(68,68,68);
+        background: linear-gradient(0deg, rgb(139, 139, 139) 0%, rgb(129, 129, 129) 100%);
     }
 }
 

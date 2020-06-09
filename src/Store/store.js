@@ -281,6 +281,21 @@ let data = {
             },
 
         ],
+    },
+    RESUME: {
+        image: '',
+        skills: {
+
+        },
+        discription: {
+
+        },
+        education: {
+
+        },
+        contact: {
+
+        }
     }
 };
 
