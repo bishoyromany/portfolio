@@ -7,8 +7,8 @@ const setupTypewriter = (t) => {
         tag = "",
         writingTag = false,
         tagOpen = false,
-        typeSpeed = 100,
-    tempTypeSpeed = 0;
+        typeSpeed = 10,
+        tempTypeSpeed = 0;
 
     var type = function() {
     

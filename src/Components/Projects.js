@@ -1,30 +1,34 @@
-import React, {useState, useEffect} from 'react'
-import {connect} from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import { HashLink as Link } from 'react-router-hash-link';
+import Pagination from './Pagination';
+import { projectsPagination as handleProjectsPagination } from './../Store/actions';
 
-const Projects = ({PROJECTS}) => {
+const Projects = ({ PROJECTS, actions }) => {
     const [project, setProject] = useState(PROJECTS.items[0]);
     const [showProject, setShowProject] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
+    const [offset, setOffset] = useState(PROJECTS.settings.offset);
 
     const showProjectAction = (index) => {
         setProject(PROJECTS.items[index]);
         setShowProject(true);
         setCurrentImage(0);
-    }   
+    }
 
     const handleImageScrollBottom = (el, skip, infinity) => {
-        if(infinity){
+        if (infinity) {
             setTimeout(() => {
-                el.style['margin-top'] = '-'+(el.height - skip)+'px';
+                el.style['margin-top'] = '-' + (el.height - skip) + 'px';
                 setTimeout(() => {
                     handleImageScrollTop(el);
                     setTimeout(() => {
                         handleImageScrollBottom(el, skip, infinity);
-                    },5000)
+                    }, 5000)
                 }, 5000)
             }, Math.floor(Math.random() * 10000));
-        }else{
-            el.style['margin-top'] = '-'+(el.height - skip)+'px';
+        } else {
+            el.style['margin-top'] = '-' + (el.height - skip) + 'px';
         }
     }
 
@@ -32,28 +36,28 @@ const Projects = ({PROJECTS}) => {
         el.style['margin-top'] = '0px';
     }
 
-    const handleSlider = (el,step) => {
+    const handleSlider = (el, step) => {
         let prev = currentImage;
-        if(step){
-            if(currentImage < project.images.length - 1){
+        if (step) {
+            if (currentImage < project.images.length - 1) {
                 prev += 1;
                 setCurrentImage(currentImage + 1);
-            }else{
+            } else {
                 setCurrentImage(0);
                 prev = 0;
             }
-        }else{
-            if(currentImage != 0){
+        } else {
+            if (currentImage != 0) {
                 setCurrentImage(currentImage - 1);
                 prev -= 1;
-            }else{
+            } else {
                 setCurrentImage(project.images.length - 1);
                 prev = project.images.length - 1;
-            }  
+            }
         }
-        if(prev != 0){
-            el.style['margin-left'] = '-'+((prev) * 100)+'%';
-        }else{
+        if (prev != 0) {
+            el.style['margin-left'] = '-' + ((prev) * 100) + '%';
+        } else {
             el.style['margin-left'] = '0px';
         }
     }
@@ -87,7 +91,7 @@ const Projects = ({PROJECTS}) => {
                         <ul className="tools">
                             {project.tools.map(item => <li key={item}>{item}</li>)}
                         </ul>
-                        
+
                         <div className="project-url-conainer">
                             {project.url.length > 0 ? (<a href={project.url} target="_blank" className="project-url">Visit Project</a>) : ''}
                         </div>
@@ -98,17 +102,17 @@ const Projects = ({PROJECTS}) => {
         </div>
     );
 
-    return(
+    return (
         <div id="Projects">
             <div className="pretty-header-container">
                 <h1 className="pretty-header">Projects</h1>
             </div>
-            
+
             <div className="container projects-container">
                 <div className="row">
                     {
-                        PROJECTS.items.map((item, index) => {
-                            return(
+                        PROJECTS.items.slice(offset, offset + PROJECTS.settings.perpage).map((item, index) => {
+                            return (
                                 <div className="col-md-4" key={item.id}>
                                     <div className="item-container">
                                         <div className="img-container">
@@ -118,7 +122,7 @@ const Projects = ({PROJECTS}) => {
                                         <ul>
                                             {
                                                 item.tools.map(item => {
-                                                    return (<li key={item}>{item}</li>)
+                                                    return (<li key={item + (Math.random() * Math.random())}>{item}</li>)
                                                 })
                                             }
                                         </ul>
@@ -134,24 +138,31 @@ const Projects = ({PROJECTS}) => {
                             )
                         })
                     }
+                    <div className="pagination-container">
+                        <Pagination offset={PROJECTS.settings.offset} perpage={PROJECTS.settings.perpage} setOffset={setOffset} totalRecords={PROJECTS.items.length} handleSettings={actions.ProjectsPagination} />
+                    </div>
                 </div>
             </div>
-            
+
             {projectPopup}
+
+            <button className="prettyButton">
+                <Link to="#Resume" smooth>View my Resume <i className="arrow down"></i></Link>
+            </button>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
-    return{
-        PROJECTS : state.PROJECTS
+    return {
+        PROJECTS: state.PROJECTS
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return{
-        actions : {
-
+    return {
+        actions: {
+            ProjectsPagination: (data) => dispatch(handleProjectsPagination(data))
         }
     }
 }

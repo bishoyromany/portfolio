@@ -180,6 +180,7 @@
         background: linear-gradient(0deg, rgb(129, 129, 129) 0%, rgb(100, 100, 100) 100%);
         .projects-container{
             margin-top : 40px;
+            position: relative;
             .col-md-4{
                 margin-bottom: 40px;
                 .item-container{
@@ -247,7 +248,7 @@
                     }
                     .learn-more{
                         position: absolute;
-                        top : -10%;
+                        top : -20%;
                         left : 35%;
                         background-color : #333;
                         padding : 10px 20px;
@@ -501,6 +502,65 @@
                 }
             }
         }
+
+        .prettyButton{
+            position: relative;
+            margin: 40px auto;
+            animation: view-projects-button 5s infinite ease-in-out;
+        }
+
+        .pagination-container{
+            position: absolute;
+            bottom : -80px;
+            right : 0px;
+            .pagination{
+                padding-right: 15px;
+                ul{
+                    list-style: none;
+                    li{
+                        display: inline-block;
+                        a{
+                            position: relative;
+                            display: block;
+                            padding: .5rem .75rem;
+                            margin-left: -1px;
+                            line-height: 1.25;
+                            color: #000000;
+                            background-color: #fff;
+                            text-decoration: none;
+                            border: 1px solid #dee2e6;
+                            &:hover{
+                                color: #000000;
+                                text-decoration: none;
+                                background-color: #e9ecef;
+                                border-color: #dee2e6;
+                            }
+                            &.active{
+                                color: #000000;
+                                text-decoration: none;
+                                background-color: #e9ecef;
+                                border-color: #dee2e6;
+                            }
+                        }
+                        &:first-of-type{
+                            a{
+                                margin-left: 0;
+                                border-top-left-radius: 1rem;
+                                border-bottom-left-radius: 1rem;
+                            }
+                        }
+                        &:last-of-type{
+                            a{
+                                margin-right: 0;
+                                border-top-right-radius: 1rem;
+                                border-bottom-right-radius: 1rem;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -518,6 +578,11 @@
 	100% {
 		offset-distance: calc((var(--char-index) * 1.5rem) + 1690px);
 	}
+}
+
+@keyframes blink {
+    from{ color: #FFF }
+    to{ color : transparent}
 }
 
 

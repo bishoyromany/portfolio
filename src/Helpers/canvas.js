@@ -1,11 +1,11 @@
 const start = () => {
     var canvas = document.getElementById('IntroCanvas'),
-    can_w = parseInt(canvas.getAttribute('width')),
-    can_h = parseInt(canvas.getAttribute('height')),
-    ctx = canvas.getContext('2d');
- 
+        can_w = parseInt(canvas.getAttribute('width')),
+        can_h = parseInt(canvas.getAttribute('height')),
+        ctx = canvas.getContext('2d');
+
     // console.log(typeof can_w);
-    
+
     var ball = {
         x: 0,
         y: 0,
@@ -14,7 +14,7 @@ const start = () => {
         r: 0,
         alpha: 1,
         phase: 0
-        },
+    },
         ball_color = {
             r: 207,
             g: 255,
@@ -24,26 +24,26 @@ const start = () => {
         balls = [],
         alpha_f = 0.03,
         alpha_phase = 0,
-        
-    // Line
+
+        // Line
         link_line_width = 0.8,
         dis_limit = 260,
         add_mouse_point = true,
         mouse_in = false,
         mouse_ball = {
-        x: 0,
-        y: 0,
-        vx: 0,
-        vy: 0,
-        r: 0,
-        type: 'mouse'
+            x: 0,
+            y: 0,
+            vx: 0,
+            vy: 0,
+            r: 0,
+            type: 'mouse'
         };
-    
+
     // Random speed
-    function getRandomSpeed(pos){
-        var  min = -1,
+    function getRandomSpeed(pos) {
+        var min = -1,
             max = 1;
-        switch(pos){
+        switch (pos) {
             case 'top':
                 return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
                 break;
@@ -61,17 +61,17 @@ const start = () => {
                 break;
         }
     }
-    function randomArrayItem(arr){
+    function randomArrayItem(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
-    function randomNumFrom(min, max){
-        return Math.random()*(max - min) + min;
+    function randomNumFrom(min, max) {
+        return Math.random() * (max - min) + min;
     }
-    console.log(randomNumFrom(0, 10));
+    // console.log(randomNumFrom(0, 10));
     // Random Ball
-    function getRandomBall(){
+    function getRandomBall() {
         var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
-        switch(pos){
+        switch (pos) {
             case 'top':
                 return {
                     x: randomSidePos(can_w),
@@ -118,62 +118,62 @@ const start = () => {
                 break;
         }
     }
-    function randomSidePos(length){
+    function randomSidePos(length) {
         return Math.ceil(Math.random() * length);
     }
-    
+
     // Draw Ball
-    function renderBalls(){
-        Array.prototype.forEach.call(balls, function(b){
-            if(!b.hasOwnProperty('type')){
-                ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
+    function renderBalls() {
+        Array.prototype.forEach.call(balls, function (b) {
+            if (!b.hasOwnProperty('type')) {
+                ctx.fillStyle = 'rgba(' + ball_color.r + ',' + ball_color.g + ',' + ball_color.b + ',' + b.alpha + ')';
                 ctx.beginPath();
-                ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
+                ctx.arc(b.x, b.y, R, 0, Math.PI * 2, true);
                 ctx.closePath();
                 ctx.fill();
             }
         });
     }
-    
+
     // Update balls
-    function updateBalls(){
+    function updateBalls() {
         var new_balls = [];
-        Array.prototype.forEach.call(balls, function(b){
+        Array.prototype.forEach.call(balls, function (b) {
             b.x += b.vx;
             b.y += b.vy;
-            
-            if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50)){
+
+            if (b.x > -(50) && b.x < (can_w + 50) && b.y > -(50) && b.y < (can_h + 50)) {
                 new_balls.push(b);
             }
-            
+
             // alpha change
             b.phase += alpha_f;
             b.alpha = Math.abs(Math.cos(b.phase));
             // console.log(b.alpha);
         });
-        
+
         balls = new_balls.slice(0);
     }
-    
+
     // loop alpha
-    function loopAlphaInf(){
-        
+    function loopAlphaInf() {
+
     }
-    
+
     // Draw lines
-    function renderLines(){
+    function renderLines() {
         var fraction, alpha;
         for (var i = 0; i < balls.length; i++) {
             for (var j = i + 1; j < balls.length; j++) {
-                
+
                 fraction = getDisOf(balls[i], balls[j]) / dis_limit;
-                
-                if(fraction < 1){
+
+                if (fraction < 1) {
                     alpha = (1 - fraction).toString();
-    
-                    ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
+
+                    ctx.strokeStyle = 'rgba(150,150,150,' + alpha + ')';
                     ctx.lineWidth = link_line_width;
-                    
+
                     ctx.beginPath();
                     ctx.moveTo(balls[i].x, balls[i].y);
                     ctx.lineTo(balls[j].x, balls[j].y);
@@ -183,40 +183,40 @@ const start = () => {
             }
         }
     }
-    
+
     // calculate distance between two points
-    function getDisOf(b1, b2){
-        var  delta_x = Math.abs(b1.x - b2.x),
+    function getDisOf(b1, b2) {
+        var delta_x = Math.abs(b1.x - b2.x),
             delta_y = Math.abs(b1.y - b2.y);
-        
-        return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
+
+        return Math.sqrt(delta_x * delta_x + delta_y * delta_y);
     }
-    
+
     // add balls if there a little balls
-    function addBallIfy(){
-        if(balls.length < 20){
+    function addBallIfy() {
+        if (balls.length < 20) {
             balls.push(getRandomBall());
         }
     }
-    
+
     // Render
-    function render(){
+    function render() {
         ctx.clearRect(0, 0, can_w, can_h);
-        
+
         renderBalls();
-        
+
         renderLines();
-        
+
         updateBalls();
-        
+
         addBallIfy();
-        
+
         window.requestAnimationFrame(render);
     }
-    
+
     // Init Balls
-    function initBalls(num){
-        for(var i = 1; i <= num; i++){
+    function initBalls(num) {
+        for (var i = 1; i <= num; i++) {
             balls.push({
                 x: randomSidePos(can_w),
                 y: randomSidePos(can_h),
@@ -229,49 +229,49 @@ const start = () => {
         }
     }
     // Init Canvas
-    function initCanvas(){
+    function initCanvas() {
         canvas.setAttribute('width', window.innerWidth);
         canvas.setAttribute('height', window.innerHeight);
-        
+
         can_w = parseInt(canvas.getAttribute('width'));
         can_h = parseInt(canvas.getAttribute('height'));
     }
-    window.addEventListener('resize', function(e){
-        console.log('Window Resize...');
+    window.addEventListener('resize', function (e) {
+        // console.log('Window Resize...');
         initCanvas();
     });
-    
-    function goMovie(){
+
+    function goMovie() {
         initCanvas();
         initBalls(30);
         window.requestAnimationFrame(render);
     }
     goMovie();
-    
+
     // Mouse effect
-    canvas.addEventListener('mouseenter', function(){
-        console.log('mouseenter');
+    canvas.addEventListener('mouseenter', function () {
+        // console.log('mouseenter');
         mouse_in = true;
         balls.push(mouse_ball);
     });
-    canvas.addEventListener('mouseleave', function(){
-        console.log('mouseleave');
+    canvas.addEventListener('mouseleave', function () {
+        // console.log('mouseleave');
         mouse_in = false;
         var new_balls = [];
-        Array.prototype.forEach.call(balls, function(b){
-            if(!b.hasOwnProperty('type')){
+        Array.prototype.forEach.call(balls, function (b) {
+            if (!b.hasOwnProperty('type')) {
                 new_balls.push(b);
             }
         });
         balls = new_balls.slice(0);
     });
-    canvas.addEventListener('mousemove', function(e){
+    canvas.addEventListener('mousemove', function (e) {
         var e = e || window.event;
         mouse_ball.x = e.pageX;
         mouse_ball.y = e.pageY;
         // console.log(mouse_ball);
     });
- 
+
 }
 
 export default start;
