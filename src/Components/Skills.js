@@ -1,30 +1,30 @@
-import React, {useState, useEffect} from 'react';
-import {connect} from 'react-redux'
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux'
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Skills = ({CAN_DO, SKILLS, MORE_SKILLS}) => {
+const Skills = ({ CAN_DO, SKILLS, MORE_SKILLS }) => {
     const [animateNow, setAnimateNow] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
     const reAnimate = () => {
         setTimeout(() => {
             setAnimateNow(true);
-        },10);
+        }, 10);
     }
 
     useEffect(() => {
         const offset = document.getElementById('Skills').offsetTop - 400;
         let scrolled = window.scrollY;
-        if(offset <= scrolled){ setIsVisible(true); reAnimate();}
+        if (offset <= scrolled) { setIsVisible(true); reAnimate(); }
         /**
          * add scroll listener
          */
         window.addEventListener('scroll', () => {
-            if(offset <= window.scrollY && !isVisible){ reAnimate(); setIsVisible(true); }
+            if (offset <= window.scrollY && !isVisible) { reAnimate(); setIsVisible(true); }
         });
     }, []);
 
-    return(
+    return (
         <div id="Skills">
             <div className="pretty-header-container">
                 <h1 className="pretty-header">Skills</h1>
@@ -34,7 +34,7 @@ const Skills = ({CAN_DO, SKILLS, MORE_SKILLS}) => {
                 <div className="row">
                     {
                         CAN_DO.map((item) => {
-                            return(
+                            return (
                                 <div key={item.title} className="col-md-3">
                                     <img src={item.icon} />
                                     <h3>{item.title}</h3>
@@ -45,20 +45,22 @@ const Skills = ({CAN_DO, SKILLS, MORE_SKILLS}) => {
                     }
                 </div>
             </div>
-            
+
             <div className="container skills-container-process">
                 <div className="row">
                     <div className="col-md-6">
                         <div className="pretty-header-container">
-                            <h1 className="pretty-header" style={{marginTop : 0}}>More</h1>
+                            <h1 className="pretty-header" style={{ marginTop: 0 }}>More</h1>
                         </div>
                         {
                             MORE_SKILLS.map(item => {
-                                return(
+                                return (
                                     <div key={item.title} className="item-container">
                                         <span className="item">{item.title}</span>
-                                        <span className={`process ${animateNow ? 'active' : 'none-active'}`} style={{width: `calc(${item.process}% - 30%)`}}>
-                                            {item.process}%
+                                        <span style={{ width: '70%', display: 'inline-block' }}>
+                                            <span style={{ width: `${item.process}%` }} className={`process ${animateNow ? 'active' : 'none-active'}`}>
+                                                {item.process}%
+                                            </span>
                                         </span>
                                     </div>
                                 )
@@ -68,11 +70,13 @@ const Skills = ({CAN_DO, SKILLS, MORE_SKILLS}) => {
                     <div className="col-md-6">
                         {
                             SKILLS.map(item => {
-                                return(
+                                return (
                                     <div key={item.title} className="item-container">
                                         <span className="item">{item.title}</span>
-                                        <span className={`process ${animateNow ? 'active' : 'none-active'}`} style={{width: `calc(${item.process}% - 30%)`}}>
-                                            {item.process}%
+                                        <span style={{ width: '70%', display: 'inline-block' }}>
+                                            <span style={{ width: `${item.process}%` }} className={`process ${animateNow ? 'active' : 'none-active'}`}>
+                                                {item.process}%
+                                            </span>
                                         </span>
                                     </div>
                                 )
@@ -91,15 +95,15 @@ const Skills = ({CAN_DO, SKILLS, MORE_SKILLS}) => {
 
 const mapStateToProp = (state) => {
     return {
-        CAN_DO : state.CAN_DO,
-        SKILLS : state.SKILLS,
-        MORE_SKILLS : state.MORE_SKILLS
+        CAN_DO: state.CAN_DO,
+        SKILLS: state.SKILLS,
+        MORE_SKILLS: state.MORE_SKILLS
     }
 }
 
 const mapDispatchToProp = (dispatch) => {
-    return{
-        actions : {
+    return {
+        actions: {
 
         }
     }
