@@ -13,6 +13,14 @@ import solution from './../Images/solution.svg'
 // projects part
 import visual from './../Images/projects/visual.png'
 
+// resume
+import email from './../Images/resume/at.svg';
+import birthday from './../Images/resume/party-hat.svg';
+import location from './../Images/resume/pin.svg';
+import website from './../Images/resume/www.svg';
+import resumeSkills from './../Images/resume/skill.svg';
+import education from './../Images/resume/graduate.svg';
+
 let data = {
     APP_NAME: "Portfolio",
     BASE_URL: "/",
@@ -284,16 +292,87 @@ let data = {
     },
     RESUME: {
         image: '',
+        name: 'Bishoy Romany',
+        job: 'Full Stack Web Developer',
+        contact: [
+            {
+                image: email,
+                title: 'Email',
+                value: '<a href="mailto:7bishoyromany7@gmail.com" target="_blank">7bishoyromany7@gmail.com</a>'
+            },
+            {
+                image: location,
+                title: 'Location',
+                value: 'Egypt -> Cairo'
+            },
+            {
+                image: birthday,
+                title: 'Date Of Birth',
+                value: '29 Dec 2000'
+            },
+            {
+                image: website,
+                title: 'Website',
+                value: '<a href="https://bishoyromany.org" target="_blank">https://bishoyromany.org</a>'
+            }
+        ],
         skills: {
+            title: 'Skills',
+            icon: resumeSkills,
+            skills: [
+                {
+                    title: 'HTML',
+                    process: 95,
+                },
+                {
+                    title: 'CSS',
+                    process: 85,
+                },
+                {
+                    title: 'Javacript',
+                    process: 70,
+                },
+                {
+                    title: 'PHP',
+                    process: 80,
+                },
+                {
+                    title: 'Laravel',
+                    process: 80,
+                },
+                {
+                    title: 'Wordpress',
+                    process: 75,
+                },
+                {
+                    title: 'Python',
+                    process: 70,
+                },
+                {
+                    title: 'MySQL',
+                    process: 80,
+                },
 
+                {
+                    title: 'React',
+                    process: 65,
+                },
+                {
+                    title: 'Vue',
+                    process: 75,
+                },
+                {
+                    title: 'Bootstrap',
+                    process: 80,
+                },
+            ]
         },
-        discription: {
 
-        },
         education: {
 
         },
-        contact: {
+
+        discription: {
 
         }
     }
