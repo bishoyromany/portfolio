@@ -3,17 +3,8 @@
 
     .prettyButton{
         position: absolute;
-        bottom : 20%;
-        left : 45%;
-        padding : 10px 30px;
-        background-color : #d4d4d4;
-        color : #333;
-        border: none;
-        border-radius : 25px;
-        animation: view-skills-button 5s infinite ease-in-out;
-        box-shadow: 0px 0px 10px -5px rgba(255,255,255,1);
-        transition: all 0.5s ease-in-out;
-        font-family: "Courier New";
+        outline: 0;
+        text-align: center;
         &:hover{
             background-color : #EEE;
         }
@@ -22,6 +13,18 @@
             font-size : 1.5em;
             text-decoration: none;
             vertical-align: middle;
+            position: absolute;
+            bottom : 0%;
+            left : 45%;
+            padding : 10px 30px;
+            background-color : #d4d4d4;
+            color : #333;
+            border: none;
+            border-radius : 25px;
+            animation: view-skills-button 5s infinite ease-in-out;
+            box-shadow: 0px 0px 10px -5px rgba(255,255,255,1);
+            transition: all 0.5s ease-in-out;
+            font-family: "Courier New";
             i{
                 padding: 5px;
                 margin-bottom: 2.5px;
@@ -88,6 +91,21 @@
             position: absolute;
             animation: loop 3500ms cubic-bezier(.62,.01,.42,1.01) infinite alternate calc(var(--char-index) * 10ms);
         }
+
+
+        .prettyButton{
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            margin-top: 100px;
+            background-color: transparent;
+            border: none;
+            bottom: 10%;
+            a{
+                animation: view-projects-button 5s infinite ease-in-out;
+            }
+        }
+
     }
 
     #Skills{
@@ -167,8 +185,14 @@
 
         .prettyButton{
             position: relative;
-            margin: 40px auto;
-            animation: view-projects-button 5s infinite ease-in-out;
+            display: inline-block;
+            width: 100%;
+            margin-top: 100px;
+            background-color: transparent;
+            border: none;
+            a{
+                animation: view-projects-button 5s infinite ease-in-out;
+            }
         }
 
     }
@@ -505,8 +529,14 @@
 
         .prettyButton{
             position: relative;
-            margin: 40px auto;
-            animation: view-projects-button 5s infinite ease-in-out;
+            display: inline-block;
+            width: 100%;
+            margin-top: 100px;
+            background-color: transparent;
+            border: none;
+            a{
+                animation: view-projects-button 5s infinite ease-in-out;
+            }
         }
 
         .pagination-container{
@@ -816,7 +846,89 @@
                 }
             }
         }
+
+        .prettyButton{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-top: 100px;
+            background-color: transparent;
+            border: none;
+            a{
+                animation: view-projects-button 5s infinite ease-in-out;
+            }
+        }
     }
+
+    #HireMe{
+        min-height: 100vh;
+        min-width: 100vw;
+        background: rgb(68,68,68);
+        background: linear-gradient(0deg, rgb(209, 209, 209) 0%, rgb(139, 139, 139) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .contant{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            height : 100%;
+            flex-direction: column;
+            align-items: center;
+            .hire{
+                display: inline-block;
+                position: relative;
+                margin: 20px 0px;
+                border-radius : 20px;
+                max-width : 500px;
+                width : 100%;
+                overflow: hidden;
+                height : 100px;
+                padding: 0px;
+                box-shadow: 0px 0px 10px -5px rgba(255,255,255,1);
+                a{
+                    padding: 0px;
+                    text-decoration: none;
+                    display: block;
+                    height : 100%;
+                }
+                .icon{
+                    vertical-align: middle;
+                    width : 20%;
+                    display: inline-block;
+                    margin-right : 5%;
+                    height : 100%;
+                    z-index : 1;
+                    position: relative;
+                    img{
+                        width : 100%;
+                        height : 100%;
+                        display: inline-block;
+                    }
+                }
+                .text{
+                    z-index : 1;
+                    position: relative;
+                    font-size : 1.5em;
+                    transition: color 0.5s ease-in-out;
+                }
+                .hover{
+                    position: absolute;
+                    top : 0px;
+                    left : 0px;
+                    transition: width 0.5s ease-in-out;
+                    width : 0px;
+                    display: inline-block;
+                    height : 100%;
+                    z-index : 0;
+                }
+                &:hover .hover{
+                    width : 100%;
+                }
+            }
+        }
+    }
+
 }
 
 @keyframes sheen {
@@ -855,13 +967,13 @@
 
 @keyframes view-projects-button{
     0%{
-        margin-top : 40px;
+        margin-bottom : 40px;
     }
     50%{
-        margin-top : 20px;
+        margin-bottom : 20px;
     }
     100%{
-        margin-top : 40px;
+        margin-bottom : 40px;
     }
 }
 

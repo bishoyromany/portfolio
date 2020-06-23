@@ -1,5 +1,6 @@
-import React, { Profiler } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Resume = ({ RESUME }) => {
     const { name, job, contact, skills, about, work, education } = RESUME;
@@ -111,6 +112,10 @@ const Resume = ({ RESUME }) => {
                     </div>
                 </div>
             </div>
+
+            <button className="prettyButton">
+                <Link to="#HireMe" smooth>Hire Me <i className="arrow down"></i></Link>
+            </button>
         </div>
     )
 }

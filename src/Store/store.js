@@ -23,6 +23,11 @@ import education from './../Images/resume/graduate.svg';
 import work from './../Images/resume/work.svg';
 import user from './../Images/resume/user.svg';
 
+// hire me
+import upwork from './../Images/hireme/upwork.png'
+import freelancer from './../Images/hireme/freelancer.png'
+import gmail from './../Images/hireme/gmail.png'
+
 let data = {
     APP_NAME: "Portfolio",
     BASE_URL: "/",
@@ -415,7 +420,36 @@ let data = {
                 }
             ],
         }
-    }
+    },
+    HIREME: [
+        {
+            'title': 'Hire me Through Upwrok',
+            'icon': upwork,
+            'url': 'https://www.upwork.com/freelancers/~0193309aa3cbddd9fd',
+            background: '#FFF',
+            color: '#333',
+            hover: '#70da44',
+            hoverColor: 'white',
+        },
+        {
+            'title': 'Hire me Through Freelancer',
+            'icon': freelancer,
+            'url': 'https://www.freelancer.com/u/bishoyromany7677',
+            background: '#FFF',
+            color: '#333',
+            hover: '#0188e2',
+            hoverColor: 'white',
+        },
+        {
+            'title': 'Or Contact Me',
+            'icon': gmail,
+            'url': 'mailto:7bishoyromany7@gmail.com',
+            background: '#FFF',
+            color: '#333',
+            hover: '#a40000',
+            hoverColor: 'white',
+        }
+    ]
 };
 
 const storeData = (state = data, action) => {

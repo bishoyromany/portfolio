@@ -3,6 +3,7 @@ import HomeIntro from './../Components/HomeIntro';
 import Skills from './../Components/Skills'
 import Projects from './../Components/Projects'
 import Resume from './../Components/Resume';
+import HireMe from './../Components/HireMe';
 
 import './../Style/Home.scss'
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <Skills />
             <Projects />
             <Resume />
+            <HireMe />
         </div>
     )
 }
