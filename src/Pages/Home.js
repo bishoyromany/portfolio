@@ -4,6 +4,7 @@ import Skills from './../Components/Skills'
 import Projects from './../Components/Projects'
 import Resume from './../Components/Resume';
 import HireMe from './../Components/HireMe';
+import Footer from './../Components/Footer';
 
 import './../Style/Home.scss'
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Projects />
             <Resume />
             <HireMe />
+            <Footer />
         </div>
     )
 }
