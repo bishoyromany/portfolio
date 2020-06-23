@@ -597,6 +597,7 @@
             }
             .content{
                 background-color : #FFF;
+                border-top: 1px solid #EEE;
                 border-bottom-left-radius: 20px;
                 border-bottom-right-radius: 20px;
                 padding : 20px;
@@ -605,7 +606,7 @@
                     .contact{
                         list-style: none;
                         padding : 0px;
-                        margin: 20px 0px 20px;
+                        margin: 0px 0px 20px;
                         -webkit-box-shadow: -2px 1px 7px -3px #000000; 
                         box-shadow: -2px 1px 7px -3px #000000;
                         li{
@@ -646,6 +647,9 @@
                         }
                     }
                     .skills{
+                        -webkit-box-shadow: -2px 1px 7px -3px #000000; 
+                        box-shadow: -2px 1px 7px -3px #000000;
+                        padding: 5px 10px;
                         .skills-header{
                             span.icon{
                                 width : 50px;
@@ -695,6 +699,119 @@
                                 }
                             }
                         }
+                    }
+                }
+                .details{
+                    .profile{
+                        .title{
+                            span.icon{
+                                width : 50px;
+                                display: inline-block;
+                                margin-right : 10px;
+                                img{
+                                    vertical-align: middle;
+                                    width : 100%;
+                                    height: auto;
+                                }
+                            }
+                            span.text{
+                                font-weight: bold;
+                                font-family: "Courier New";
+                                vertical-align: middle;
+                                font-size : 25px;
+                            }
+                        }
+                        .profile-content{
+                            font-family: "Courier New";
+                            margin-top : 20px;
+                            line-height: 1.5em;
+                        }
+                    }
+                    .exp{
+                        margin-top : 20px;
+                        .title{
+                            span.icon{
+                                width : 50px;
+                                display: inline-block;
+                                margin-right : 10px;
+                                img{
+                                    vertical-align: middle;
+                                    width : 100%;
+                                    height: auto;
+                                }
+                            }
+                            span.text{
+                                font-weight: bold;
+                                font-family: "Courier New";
+                                vertical-align: middle;
+                                font-size : 25px;
+                            }
+                        }
+                        .exp-content{
+                            font-family: "Courier New";
+                            margin-top : 20px;
+                            line-height: 1.5em;
+                            padding: 0px;
+                            list-style: none;
+                            li{
+                                margin-bottom : 10px;
+                                .title{
+                                    width : 280px;
+                                    display: inline-block;
+                                }
+                                .company{
+                                    display: inline-block;
+                                    text-decoration: none;
+                                    color : #000;
+                                    font-weight: bold;
+                                    width : 200px;
+                                }
+                            }
+                        }
+                        
+                    }
+                    .education{
+                        margin-top : 20px;
+                        .title{
+                            span.icon{
+                                width : 50px;
+                                display: inline-block;
+                                margin-right : 10px;
+                                img{
+                                    vertical-align: middle;
+                                    width : 100%;
+                                    height: auto;
+                                }
+                            }
+                            span.text{
+                                font-weight: bold;
+                                font-family: "Courier New";
+                                vertical-align: middle;
+                                font-size : 25px;
+                            }
+                        }
+                        .education-content{
+                            font-family: "Courier New";
+                            margin-top : 20px;
+                            line-height: 1.5em;
+                            padding: 0px;
+                            list-style: none;
+                            li{
+                                margin-bottom : 10px;
+                                .title{
+                                    width : 280px;
+                                    display: inline-block;
+                                }
+                                .company{
+                                    display: inline-block;
+                                    text-decoration: none;
+                                    color : #000;
+                                    font-weight: bold;
+                                    width : 200px;
+                                }
+                            }
+                        }
+                        
                     }
                 }
             }

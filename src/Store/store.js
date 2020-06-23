@@ -20,6 +20,8 @@ import location from './../Images/resume/pin.svg';
 import website from './../Images/resume/www.svg';
 import resumeSkills from './../Images/resume/skill.svg';
 import education from './../Images/resume/graduate.svg';
+import work from './../Images/resume/work.svg';
+import user from './../Images/resume/user.svg';
 
 let data = {
     APP_NAME: "Portfolio",
@@ -367,13 +369,51 @@ let data = {
                 },
             ]
         },
-
-        education: {
-
+        about: {
+            title: 'About Me',
+            icon: user,
+            content: `
+                I'm Bishoy Romany, i love anything related to technology and computers. <br /> 
+                I've +2 years of creating websites, i can build any website related to the prgramming languages that i master, 
+                in fact i like building big and complicated websites, it's much interesting than simple websites. <br />
+                I'm open for learning new technologies and accept criticism, because i believe that this is how we can improve and reach the required task.
+            `
         },
-
-        discription: {
-
+        work: {
+            title: "Experience",
+            icon: work,
+            exp: [
+                {
+                    title: 'Full-stack web developer',
+                    time: '2019 - present',
+                    company: 'Upwork',
+                    url: 'https://www.upwork.com/freelancers/~0193309aa3cbddd9fd'
+                },
+                {
+                    title: 'Full-stack web developer',
+                    time: '2019 - present',
+                    company: 'Freelancer',
+                    url: 'https://www.freelancer.com/u/bishoyromany7677'
+                }
+            ],
+        },
+        education: {
+            title: "Education",
+            icon: education,
+            edu: [
+                {
+                    title: 'Faculty of Commerce',
+                    time: '2019 - present',
+                    company: 'Ain Shams University',
+                    url: 'http://www.asu.edu.eg/'
+                },
+                {
+                    title: 'High School',
+                    time: '2016 - 2019',
+                    company: 'Cairo High School',
+                    url: '#Resume'
+                }
+            ],
         }
     }
 };

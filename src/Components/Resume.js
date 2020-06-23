@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Profiler } from 'react'
 import { connect } from 'react-redux'
 
 const Resume = ({ RESUME }) => {
-    const { name, job, contact, skills } = RESUME;
+    const { name, job, contact, skills, about, work, education } = RESUME;
     console.log(contact);
     return (
         <div id="Resume">
@@ -19,9 +19,58 @@ const Resume = ({ RESUME }) => {
                         <div className="row">
                             <div class="col-md-8">
                                 <div className="details">
+                                    <div className="profile">
+                                        <div className="title">
+                                            <span className="icon">
+                                                <img src={about.icon} alt={about.title} />
+                                            </span>
+                                            <span className="text">{about.title}</span>
+                                        </div>
+                                        <div className="profile-content" dangerouslySetInnerHTML={{ __html: about.content }}></div>
+                                    </div>
 
+                                    <div className="exp">
+                                        <div className="title">
+                                            <span className="icon">
+                                                <img src={work.icon} alt={work.title} />
+                                            </span>
+                                            <span className="text">{work.title}</span>
+                                        </div>
+                                        <ul className="exp-content">
+                                            {
+                                                work.exp.map((item, i) => (
+                                                    <li key={i}>
+                                                        <span className="title">{item.title}</span>
+                                                        <a className="company" target="_blank" href={item.url}>{item.company}</a>
+                                                        <span className="time">{item.time}</span>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
+
+                                    <div className="education">
+                                        <div className="title">
+                                            <span className="icon">
+                                                <img src={education.icon} alt={education.title} />
+                                            </span>
+                                            <span className="text">{education.title}</span>
+                                        </div>
+                                        <ul className="education-content">
+                                            {
+                                                education.edu.map((item, i) => (
+                                                    <li key={i}>
+                                                        <span className="title">{item.title}</span>
+                                                        <a className="company" target={item.url != '#Resume' ? '_blank' : ''} href={item.url}>{item.company}</a>
+                                                        <span className="time">{item.time}</span>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+
                             <div className="col-md-4">
                                 <div className="summary">
                                     <ul className="contact">
