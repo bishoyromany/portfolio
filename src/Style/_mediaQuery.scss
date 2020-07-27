@@ -301,6 +301,12 @@
     }
 }
 
+@media print {
+    .container{
+        max-width: 100%;
+    }
+}
+
 @keyframes view-projects-button-xs{
     0%{
         margin-bottom : 40px;

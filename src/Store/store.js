@@ -366,9 +366,10 @@ let data = {
             icon: user,
             content: `
                 I'm Bishoy Romany, i love anything related to technology and computers. <br /> 
-                I've +2 years of creating websites, i can build any website related to the programming languages that i master, 
+                I've +2 years of creating websites, i can build any website related to the programming languages that i master, <br />
                 in fact i like building big and complicated websites, it's much interesting than simple websites. <br />
-                I'm open for learning new technologies and accept criticism, because i believe that this is how we can improve and reach the required task.
+                I'm open for learning new technologies and accept criticism, <br />
+                because i believe that this is how we can improve and reach the required task.
             `
         },
         work: {
@@ -379,7 +380,8 @@ let data = {
                     title: 'Full-stack web developer',
                     time: '2019 - present',
                     company: 'Upwork',
-                    url: 'https://www.upwork.com/freelancers/~0193309aa3cbddd9fd'
+                    url: 'https://www.upwork.com/freelancers/~0193309aa3cbddd9fd',
+                    // text: `i've bean working in Upwork for more than a year, during this year, i've developed a lot of different types of websites, all clients that worked with me are satisfied`
                 },
                 {
                     title: 'Full-stack web developer',

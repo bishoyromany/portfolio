@@ -2,16 +2,28 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Resume = ({ RESUME }) => {
+const Resume = ({ RESUME, print, style = {} }) => {
     const { name, job, contact, skills, about, work, education } = RESUME;
-    console.log(contact);
+    const header = print ? '' : (
+        <div className="pretty-header-container">
+            <h1 className="pretty-header"><Link target="_blank" to="/Resume">Resume</Link></h1>
+        </div>
+    );
+    const prettyButton = print ? '' :
+        (
+            <button className="prettyButton">
+                <Link to="#HireMe" smooth>Hire Me <i className="arrow down"></i></Link>
+            </button>
+        );
+
+    const containerStyles = print ? {
+        marginTop: '0px',
+    } : {};
     return (
-        <div id="Resume">
-            <div className="pretty-header-container">
-                <h1 className="pretty-header">Resume</h1>
-            </div>
-            <div className="container">
-                <div className="resumeContainer">
+        <div id="Resume" style={{ ...style }}>
+            {header}
+            <div className={'container'}>
+                <div className="resumeContainer" style={containerStyles}>
                     <div className="header">
                         <span className="name">{name}</span>
                         <span className="job">{job}</span>
@@ -44,6 +56,7 @@ const Resume = ({ RESUME }) => {
                                                         <span className="title">{item.title}</span>
                                                         <a className="company" target="_blank" href={item.url}>{item.company}</a>
                                                         <span className="time">{item.time}</span>
+                                                        <div className="profile-content" dangerouslySetInnerHTML={{ __html: item.text }}></div>
                                                     </li>
                                                 ))
                                             }
@@ -112,10 +125,7 @@ const Resume = ({ RESUME }) => {
                     </div>
                 </div>
             </div>
-
-            <button className="prettyButton">
-                <Link to="#HireMe" smooth>Hire Me <i className="arrow down"></i></Link>
-            </button>
+            {prettyButton}
         </div>
     )
 }
