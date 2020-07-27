@@ -85,7 +85,7 @@ let data = {
             icon: solution
         }
     ],
-    SKILLS: [
+    FRONTEND: [
         {
             title: 'HTML',
             process: 95,
@@ -96,8 +96,34 @@ let data = {
         },
         {
             title: 'Javacript',
+            process: 80,
+        },
+        {
+            title: 'JQuery',
+            process: 75,
+        },
+        {
+            title: 'React',
             process: 70,
         },
+        {
+            title: 'Vue',
+            process: 75,
+        },
+        {
+            title: 'Bootstrap',
+            process: 80,
+        },
+        {
+            title: 'SASS',
+            process: 70,
+        },
+        {
+            title: 'Pug',
+            process: 60,
+        },
+    ],
+    BACKEND: [
         {
             title: 'PHP',
             process: 80,
@@ -118,66 +144,21 @@ let data = {
             title: 'MySQL',
             process: 80,
         },
-
-        {
-            title: 'React',
-            process: 65,
-        },
-        {
-            title: 'Vue',
-            process: 75,
-        },
-        {
-            title: 'Bootstrap',
-            process: 80,
-        },
-        // {
-        //     title : 'SASS',
-        //     process: 60,
-        //     icon : sass
-        // },
-        // {
-        //     title : 'Pug',
-        //     process: 60,
-        //     icon : pug
-        // },
-    ],
-    MORE_SKILLS: [
         {
             title: 'API Integration',
             process: 80,
-        },
-        {
-            title: 'JSON',
-            process: 100,
-        },
-        {
-            title: 'Ajax',
-            process: 80,
-        },
-        {
-            title: 'Scraping',
-            process: 70,
-        },
-        {
-            title: 'Git',
-            process: 70,
-        },
-        {
-            title: 'Host Website',
-            process: 80,
-        },
-        {
-            title: 'NPM',
-            process: 75,
         },
         {
             title: 'Plugins Dev',
             process: 60,
         },
         {
-            title: 'SPA',
-            process: 90,
+            title: 'Scraping',
+            process: 70,
+        },
+        {
+            title: 'Selenium',
+            process: 60
         }
     ],
     PROJECTS: {
@@ -379,7 +360,7 @@ let data = {
             icon: user,
             content: `
                 I'm Bishoy Romany, i love anything related to technology and computers. <br /> 
-                I've +2 years of creating websites, i can build any website related to the prgramming languages that i master, 
+                I've +2 years of creating websites, i can build any website related to the programming languages that i master, 
                 in fact i like building big and complicated websites, it's much interesting than simple websites. <br />
                 I'm open for learning new technologies and accept criticism, because i believe that this is how we can improve and reach the required task.
             `

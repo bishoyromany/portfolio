@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Skills = ({ CAN_DO, SKILLS, MORE_SKILLS }) => {
+const Skills = ({ CAN_DO, FRONTEND, BACKEND }) => {
     const [animateNow, setAnimateNow] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [animateDone, setAnimateDone] = useState(false);
 
     const reAnimate = () => {
         setTimeout(() => {
@@ -23,6 +24,14 @@ const Skills = ({ CAN_DO, SKILLS, MORE_SKILLS }) => {
             if (offset <= window.scrollY && !isVisible) { reAnimate(); setIsVisible(true); }
         });
     }, []);
+
+    useEffect(() => {
+        if (animateNow) {
+            setTimeout(() => {
+                setAnimateDone(true);
+            }, 5000);
+        }
+    }, [animateNow]);
 
     return (
         <div id="Skills">
@@ -50,15 +59,15 @@ const Skills = ({ CAN_DO, SKILLS, MORE_SKILLS }) => {
                 <div className="row">
                     <div className="col-md-6">
                         <div className="pretty-header-container">
-                            <h1 className="pretty-header" style={{ marginTop: 0 }}>More</h1>
+                            <h1 className="pretty-header" style={{ marginTop: 0 }}>Front-end</h1>
                         </div>
                         {
-                            MORE_SKILLS.map(item => {
+                            FRONTEND.map(item => {
                                 return (
                                     <div key={item.title} className="item-container">
                                         <span className="item">{item.title}</span>
                                         <span style={{ width: '70%', display: 'inline-block' }}>
-                                            <span style={{ width: `${item.process}%` }} className={`process ${animateNow ? 'active' : 'none-active'}`}>
+                                            <span style={{ width: `${item.process}%` }} className={`process ${animateNow ? 'active' : 'none-active'} ${animateDone ? 'done' : 'animating'}`}>
                                                 {item.process}%
                                             </span>
                                         </span>
@@ -68,13 +77,16 @@ const Skills = ({ CAN_DO, SKILLS, MORE_SKILLS }) => {
                         }
                     </div>
                     <div className="col-md-6">
+                        <div className="pretty-header-container">
+                            <h1 className="pretty-header" style={{ marginTop: 0 }}>Back-end</h1>
+                        </div>
                         {
-                            SKILLS.map(item => {
+                            BACKEND.map(item => {
                                 return (
                                     <div key={item.title} className="item-container">
                                         <span className="item">{item.title}</span>
                                         <span style={{ width: '70%', display: 'inline-block' }}>
-                                            <span style={{ width: `${item.process}%` }} className={`process ${animateNow ? 'active' : 'none-active'}`}>
+                                            <span style={{ width: `${item.process}%` }} className={`process ${animateNow ? 'active' : 'none-active'} ${animateDone ? 'done' : 'animating'}`}>
                                                 {item.process}%
                                             </span>
                                         </span>
@@ -96,8 +108,8 @@ const Skills = ({ CAN_DO, SKILLS, MORE_SKILLS }) => {
 const mapStateToProp = (state) => {
     return {
         CAN_DO: state.CAN_DO,
-        SKILLS: state.SKILLS,
-        MORE_SKILLS: state.MORE_SKILLS
+        FRONTEND: state.FRONTEND,
+        BACKEND: state.BACKEND
     }
 }
 
