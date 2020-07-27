@@ -1,6 +1,5 @@
 #Home{
     overflow: hidden;
-
     .prettyButton{
         position: absolute;
         outline: 0;
@@ -106,6 +105,9 @@
             }
         }
 
+        .skills-container{
+            display: none;
+        }
     }
 
     #Skills{
@@ -172,7 +174,7 @@
                 }
                 & > span{
                     background-color : #f2f2f238;
-                    border-radius: 10px;
+                    border-radius : 20px;
                     
                 }
 
@@ -186,7 +188,7 @@
                     color : #FFF;
                     width : 0px;
                     max-width: 0px;
-                    border-radius : 10px;
+                    border-radius :20px;
                     &.active{
                         max-width : 300%;
                     }
@@ -350,7 +352,7 @@
             &.show-project{
                 margin-top : 0px;
                 opacity: 1;
-                z-index: 111111;
+                z-index: 1111111111111111111;
             }
             .project-overlay{
                 position: fixed;
@@ -1019,3 +1021,5 @@
         transform: rotate(130deg);
     }
 }
+
+@import './mediaQuery';

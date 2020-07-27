@@ -18,6 +18,7 @@ import email from './../Images/resume/at.svg';
 import birthday from './../Images/resume/party-hat.svg';
 import location from './../Images/resume/pin.svg';
 import website from './../Images/resume/www.svg';
+import github from './../Images/resume/github.svg';
 import resumeSkills from './../Images/resume/skill.svg';
 import education from './../Images/resume/graduate.svg';
 import work from './../Images/resume/work.svg';
@@ -299,9 +300,14 @@ let data = {
                 value: '29 Dec 2000'
             },
             {
+                image: github,
+                title: 'Github',
+                value: '<a href="https://github.com/bishoyromany" target="_blank">github.com/bishoyromany</a>'
+            },
+            {
                 image: website,
                 title: 'Website',
-                value: '<a href="https://bishoyromany.org" target="_blank">https://bishoyromany.org</a>'
+                value: '<a href="https://bishoyromany.org" target="_blank">github.com/bishoyromany/pf</a>'
             }
         ],
         skills: {
@@ -318,7 +324,7 @@ let data = {
                 },
                 {
                     title: 'Javacript',
-                    process: 70,
+                    process: 80,
                 },
                 {
                     title: 'PHP',
@@ -343,7 +349,7 @@ let data = {
 
                 {
                     title: 'React',
-                    process: 65,
+                    process: 70,
                 },
                 {
                     title: 'Vue',

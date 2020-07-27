@@ -44,7 +44,7 @@ const Skills = ({ CAN_DO, FRONTEND, BACKEND }) => {
                     {
                         CAN_DO.map((item) => {
                             return (
-                                <div key={item.title} className="col-md-3">
+                                <div key={item.title} className="col-md-3 mb-3">
                                     <img src={item.icon} />
                                     <h3>{item.title}</h3>
                                     <p>{item.text}</p>
@@ -59,7 +59,7 @@ const Skills = ({ CAN_DO, FRONTEND, BACKEND }) => {
                 <div className="row">
                     <div className="col-md-6">
                         <div className="pretty-header-container">
-                            <h1 className="pretty-header" style={{ marginTop: 0 }}>Front-end</h1>
+                            <h1 className="pretty-header mt-2" style={{ marginTop: 0 }}>Front-end</h1>
                         </div>
                         {
                             FRONTEND.map(item => {
@@ -78,7 +78,7 @@ const Skills = ({ CAN_DO, FRONTEND, BACKEND }) => {
                     </div>
                     <div className="col-md-6">
                         <div className="pretty-header-container">
-                            <h1 className="pretty-header" style={{ marginTop: 0 }}>Back-end</h1>
+                            <h1 className="pretty-header mt-2" style={{ marginTop: 0 }}>Back-end</h1>
                         </div>
                         {
                             BACKEND.map(item => {

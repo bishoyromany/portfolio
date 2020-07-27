@@ -1,0 +1,326 @@
+@media only screen and (max-width : 750px){
+    #Home{
+        .prettyButton{
+            text-align: center;
+            animation: view-projects-button-xs 5s infinite ease-in-out;
+            a{
+                position: static;
+            }
+        }
+    
+        .HomeIntro{
+            width : 100vw;
+            height: 100vh;
+            position: relative;
+            canvas{
+                width: 100vw;
+                height : 100vh;
+                position: fixed !important;
+                top: 0px;
+                left: 0px;
+            }
+            .textContainer{
+                position: absolute;
+                padding-top: 30%;
+                padding-left: 5%;
+                padding-right: 2.5%;
+                #typewriter{
+                    font-size: 18px;
+                    .margin-left{
+                        margin-left: 25px;
+                    }
+                }
+    
+            }
+    
+            .hello-animated{
+                display: none;
+            }
+    
+            .prettyButton{
+                bottom: 3%;
+            }
+            
+
+            .skills-container{
+                position: absolute;
+                top : 50%;
+                display: block;
+                left: 10%;
+                .responsive-image {
+                    width: 100%;
+                }
+                
+                .tool-support-animation-container {
+                    position: relative;
+                    margin: 0 auto;
+                    width: 291px;
+                    height: 247px;
+                
+                }
+                
+                // Animation
+                
+                // Tiles
+                $animation-time: 700ms;
+                $animation-ease: ease-out;
+                
+                .tile-slide-down {
+                    transition: opacity $animation-time $animation-ease,
+                    transform $animation-time $animation-ease;
+                }
+                
+                .tile-slide-down--top {
+                    transform: translate(0, -25px);
+                    opacity: 0;
+                }
+                
+                .tile-slide-down--bottom {
+                    transform: translate(0,0);
+                    opacity: 1;
+                }
+                
+                // Shadows
+                .shadow-grow {
+                    transition: opacity $animation-time $animation-ease,
+                    transform $animation-time $animation-ease;
+                    transform-origin: center bottom;
+                }
+                
+                .shadow-grow--inactive {
+                    transform: scale(0) translate(0, -10px);
+                    opacity: 0;
+                }
+                
+                .shadow-grow--active {
+                    transform: scale(1) translate(0, 0px);
+                    opacity: 1;
+                }
+                
+                // Tiles
+                .deployment-tile-container {
+                    position: relative;
+                    z-index: 2;
+                    cursor: pointer;
+                
+                    &:hover {
+                    transform: translate(0, -10px);
+                
+                    & + .deployment-shadow-container .shadow-grow {
+                        transform: scale(0.9) translate(0, -3px);
+                    }
+                    }
+                }
+                
+                .deployment-tile {
+                    position: absolute;
+                    height: 34px;
+                    width: 89px;
+                }
+                
+                .deployment-tile--fake {
+                    top: 0;
+                    left: 7px;
+                }
+                
+                .deployment-tile--rake {
+                    top: 73px;
+                    left: 4px;
+                }
+                
+                .deployment-tile--grunt {
+                    top: 146px;
+                    left: 5px;
+                }
+                
+                .deployment-tile--bamboo {
+                    top: 36px;
+                    left: 68px;
+                }
+                
+                .deployment-tile--git {
+                    top: 108px;
+                    left: 68px;
+                }
+                
+                .deployment-tile--capistrano {
+                    top: 183px;
+                    left: 68px;
+                }
+                
+                .deployment-tile--octopus {
+                    top: 72px;
+                    left: 133px;
+                }
+                
+                .deployment-tile--api {
+                    top: 146px;
+                    left: 132px;
+                }
+                
+                .deployment-tile--heroku {
+                    top: 35px;
+                    left: 196px;
+                }
+                
+                .deployment-tile--konsole {
+                    top: 109px;
+                    left: 195px;
+                }
+                
+                .deployment-tile--powershell {
+                    top: 182px;
+                    left: 195px;
+                }
+                
+                // Shadows
+                .deployment-shadow-container {
+                    position: relative;
+                    z-index: 1;
+                }
+                
+                .deployment-shadow {
+                    position: absolute;
+                    height: 34px;
+                    width: 89px;
+                }
+                
+                .deployment-shadow--fake {
+                    top: 9px;
+                    left: 8px;
+                }
+                
+                .deployment-shadow--rake {
+                    top: 82px;
+                    left: 5px;
+                }
+                
+                .deployment-shadow--grunt {
+                    top: 155px;
+                    left: 6px;
+                }
+                
+                .deployment-shadow--bamboo {
+                    top: 45px;
+                    left: 69px;
+                }
+                
+                .deployment-shadow--git {
+                    top: 117px;
+                    left: 69px;
+                }
+                
+                .deployment-shadow--capistrano {
+                    top: 191px;
+                    left: 69px;
+                }
+                
+                .deployment-shadow--octopus {
+                    top: 81px;
+                    left: 134px;
+                }
+                
+                .deployment-shadow--api {
+                    top: 154px;
+                    left: 133px;
+                }
+                
+                .deployment-shadow--heroku {
+                    top: 44px;
+                    left: 197px;
+                }
+                
+                .deployment-shadow--konsole {
+                    top: 118px;
+                    left: 196px;
+                }
+                
+                .deployment-shadow--powershell {
+                    top: 191px;
+                    left: 196px;
+                }
+            }
+
+        }
+    
+        #Skills{
+            padding-bottom: 130px;
+            .skills-container-process{
+                margin-top: 40px;
+                .item-container{
+                    .item{
+                        padding-left: 0px;
+                        padding-right: 0px;
+                    }
+                }
+            }
+    
+            .prettyButton{
+                width: 100%;
+                margin-top: 50px;
+                position: absolute;
+                animation: view-projects-button-xs-top 5s infinite ease-in-out;
+            }
+    
+        }
+    
+        #Projects{
+            padding-bottom: 130px;
+            .pagination-items{
+                margin: 0px;
+            }
+            .prettyButton{
+                width: 100%;
+                margin-top: 50px;
+                position: absolute;
+                animation: view-projects-button-xs-top 5s infinite ease-in-out;
+            }
+            .pagination-container{
+                position: static;
+                margin: 0px auto;
+            }
+        }
+    
+        #Resume{
+            padding-bottom: 130px;
+            .prettyButton{
+                width: 100%;
+                margin-top: 50px;
+                position: absolute;
+                animation: view-projects-button-xs-top 5s infinite ease-in-out;
+            }
+        }
+    }
+
+    #Footer{
+        p{
+            a{
+                display: block;
+            }
+        }
+    }
+}
+
+@keyframes view-projects-button-xs{
+    0%{
+        margin-bottom : 40px;
+    }
+    50%{
+        margin-bottom : 20px;
+    }
+    100%{
+        margin-bottom : 40px;
+    }
+}
+
+@keyframes view-projects-button-xs-top{
+    0%{
+        margin-top : 70px;
+    }
+    50%{
+        margin-top : 50px;
+    }
+    100%{
+        margin-top : 70px;
+    }
+}
